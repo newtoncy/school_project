@@ -8,11 +8,12 @@
 from web import app
 from db import table, Session, SessionBase
 from flask import request, url_for
-import json
+from web.util.decorators import renderTemplate
 from db.decorators import withSession
 
 
 @app.route('/api/keyword/<int:_id>')
+@renderTemplate('??')  # todo:记得改
 @withSession
 def keyword(session, _id):
     _keyword = session.query(table.Keyword).get(_id)
@@ -35,4 +36,5 @@ def keyword(session, _id):
     out['speciality'] = [{'name': item.r_speciality.speciality, 'weight': item.weight,
                           'url': url_for('speciality', _id=item.speciality_id)}
                          for item in wordFrequency]
-    return json.dumps(out, ensure_ascii=False)
+    return out
+

@@ -34,4 +34,4 @@ def station(session, _id):
                        'url': url_for('keyword', _id=item.r_keyword.id)}
                       for item in wordFrequencyList]
     out['hot'] = None  # todo:计算热度
-    return json.dumps(out, ensure_ascii=False)
+    return out

@@ -10,9 +10,11 @@ from web import app
 from db import table, Session, SessionBase
 from flask import request, url_for
 from db.decorators import withSession
+from web.util.decorators import renderTemplate
 
 
 @app.route('/api/station/')
+@renderTemplate("speciality_list.html")
 @withSession
 def stationList(session):
     start = int(request.args.get('start', 0))
@@ -21,4 +23,4 @@ def stationList(session):
     out = [{'name': item.station, 'frequency': item.frequency,
             'url': url_for('station', _id=item.id)}
            for item in stations]
-    return json.dumps(out, ensure_ascii=False)
+    return out

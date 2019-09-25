@@ -26,4 +26,4 @@ def page(session: SessionBase, _id):
     keywordList = page.keyword_collection
     out['keywordList'] = [{'name': item.keyword, 'url': url_for('keyword', _id=item.id)}
                           for item in keywordList]
-    return json.dumps(out, ensure_ascii=False)
+    return out

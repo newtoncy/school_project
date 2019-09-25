@@ -10,9 +10,11 @@ from db import table, Session, SessionBase
 from flask import request, url_for
 import json
 from db.decorators import withSession
+from web.util.decorators import renderTemplate
 
 
 @app.route('/api/speciality/<int:_id>')
+@renderTemplate('??')  # todo:
 @withSession
 def speciality(session, _id):
     _speciality: table.Speciality = session.query(table.Speciality).get(_id)
@@ -33,4 +35,4 @@ def speciality(session, _id):
                        'url': url_for('keyword', _id=item.r_keyword.id)}
                       for item in wordFrequencyList]
     out['hot'] = None  # todo:计算热度
-    return json.dumps(out, ensure_ascii=False)
+    return out

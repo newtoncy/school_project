@@ -1,7 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="794afc0b-a4b4-4198-8070-7df9d002133b" name="Default Changelist" comment="" />
+    <list default="true" id="794afc0b-a4b4-4198-8070-7df9d002133b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/12131.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/a.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/global.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/speciality_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/util/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/util/decorators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/api/keyword.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/keyword.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/api/page.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/page.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/api/speciality.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/speciality.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/api/specialityList.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/specialityList.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/api/station.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/station.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/api/stationList.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/stationList.py" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -11,18 +26,26 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Python Script" />
         <option value="Python Unit Test" />
+        <option value="Python Script" />
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Q9UZ9F6EKh5mvjONipdi8eaKVL" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/test" />
     <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\12131\PycharmProjects\a_project\web\templates" />
       <recent name="C:\Users\12131\PycharmProjects\a_project\test" />
     </key>
   </component>
@@ -38,7 +61,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python tests.Unittests for apiTest.MyTestCase.test_keyword">
+  <component name="RunManager" selected="Python tests.Unittests for webTest.MyTestCase.test_something">
     <configuration name="Unittests for apiTest.MyTestCase.test_keyword" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="a_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -111,8 +134,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python tests.Unittests for apiTest.MyTestCase.test_keyword" />
         <item itemvalue="Python tests.Unittests for webTest.MyTestCase.test_something" />
+        <item itemvalue="Python tests.Unittests for apiTest.MyTestCase.test_keyword" />
         <item itemvalue="Python tests.Unittests for apiTest.MyTestCase.test_page" />
         <item itemvalue="Python tests.Unittests for apiTest.MyTestCase.test_speciality" />
         <item itemvalue="Python tests.Unittests for webInfoTest.MyTestCase.test_updateDB" />
@@ -131,6 +154,19 @@
       <updated>1567182358696</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -155,6 +191,9 @@
       </default-breakpoints>
     </breakpoint-manager>
     <watches-manager>
+      <configuration name="tests">
+        <watch expression="template_rendered" />
+      </configuration>
       <configuration name="PythonConfigurationType">
         <watch expression="dialect_cls.engine_config_types" />
         <watch expression="dialect_args" />
