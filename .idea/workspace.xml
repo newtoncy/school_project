@@ -2,20 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="794afc0b-a4b4-4198-8070-7df9d002133b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/12131.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/a.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/static/global.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/templates/speciality_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/util/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/util/decorators.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/static/b.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/speciality.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/speciality_list-old.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/station_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/api/keyword.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/keyword.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/api/page.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/page.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/api/speciality.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/speciality.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/api/specialityList.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/specialityList.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/api/station.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/station.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/api/stationList.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/stationList.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/templates/speciality_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/speciality_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/util/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/util/decorators.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,6 +35,7 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/test" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -153,6 +150,14 @@
       <option name="presentableId" value="Default" />
       <updated>1567182358696</updated>
     </task>
+    <task id="LOCAL-00001" summary="写了一个模板">
+      <created>1569388892342</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1569388892342</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -168,6 +173,11 @@
       </map>
     </option>
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="写了一个模板" />
+    <option name="LAST_COMMIT_MESSAGE" value="写了一个模板" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -175,11 +185,6 @@
           <url>file://$PROJECT_DIR$/test/dbTest.py</url>
           <line>9</line>
           <option name="timeStamp" value="13" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/web/api/station.py</url>
-          <line>25</line>
-          <option name="timeStamp" value="22" />
         </line-breakpoint>
       </breakpoints>
       <default-breakpoints>

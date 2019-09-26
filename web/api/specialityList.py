@@ -26,6 +26,6 @@ def specialityList(session):
                          for item in speciality]
     out['nextPage'] = url_for('specialityList') + '?start=%d' % end
     foo = start - 30
-    if foo > 0:
+    if foo >= 0:
         out['prePage'] = url_for('specialityList') + '?start=%d' % foo
     return out

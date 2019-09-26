@@ -18,7 +18,7 @@ def renderTemplate(templateName):
             if returnJson:
                 return json.dumps(result, ensure_ascii=False)
             else:
-                return render_template(templateName, foo=result)
+                return render_template(templateName, **result)
 
         warpFunction.__name__ = f.__name__
         return warpFunction

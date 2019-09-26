@@ -14,20 +14,21 @@ from web.util.decorators import renderTemplate
 
 
 @app.route('/api/speciality/<int:_id>')
-@renderTemplate('??')  # todo:
+@renderTemplate('speciality.html')  # todo:
 @withSession
 def speciality(session, _id):
     _speciality: table.Speciality = session.query(table.Speciality).get(_id)
     out = {}
     out['name'] = _speciality.speciality
     out['frequency'] = _speciality.frequency
-    out['page'] = [{'co_name': i.json['公司名'], 'url': url_for('page', _id=i.id)} for i in _speciality.pages_collection]
+    out['page'] = [{'name': i.json['职位'], 'co_name': i.json['公司名'], 'url': url_for('page', _id=i.id)}
+                   for i in _speciality.pages_collection]
     foo = session.query(table.SpecialityHasStation). \
         filter(table.SpecialityHasStation.r_speciality == _speciality). \
         order_by(table.SpecialityHasStation.frequency.desc()).all()
     out['station'] = [{'name': i.r_station.station, 'frequency': i.frequency,
-                          'url': url_for('station', _id=i.r_station.id)}
-                         for i in foo]
+                       'url': url_for('station', _id=i.r_station.id)}
+                      for i in foo]
     wordFrequencyList = session.query(table.WordFrequency). \
         filter(table.WordFrequency.r_speciality == _speciality). \
         order_by(table.WordFrequency.weight.desc()).limit(100).all()
