@@ -2,16 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="794afc0b-a4b4-4198-8070-7df9d002133b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/web/static/b.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/templates/speciality.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/templates/speciality_list-old.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/templates/station_list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/templates/station.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/db/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/api/speciality.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/speciality.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/api/specialityList.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/specialityList.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/api/stationList.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/stationList.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/templates/speciality_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/web/templates/speciality_list.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/util/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/util/decorators.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/api/station.py" beforeDir="false" afterPath="$PROJECT_DIR$/web/api/station.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +54,27 @@
     </option>
   </component>
   <component name="RunManager" selected="Python tests.Unittests for webTest.MyTestCase.test_something">
+    <configuration name="？？" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="a_project" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test/？？.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Unittests for apiTest.MyTestCase.test_keyword" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="a_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -101,20 +117,6 @@
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for webInfoTest.MyTestCase.test_updateDB" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
-      <module name="a_project" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/test" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;webInfoTest.MyTestCase.test_updateDB&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
-      <method v="2" />
-    </configuration>
     <configuration name="Unittests for webTest.MyTestCase.test_something" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="a_project" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -132,10 +134,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Unittests for webTest.MyTestCase.test_something" />
+        <item itemvalue="Python.？？" />
         <item itemvalue="Python tests.Unittests for apiTest.MyTestCase.test_keyword" />
         <item itemvalue="Python tests.Unittests for apiTest.MyTestCase.test_page" />
         <item itemvalue="Python tests.Unittests for apiTest.MyTestCase.test_speciality" />
-        <item itemvalue="Python tests.Unittests for webInfoTest.MyTestCase.test_updateDB" />
       </list>
     </recent_temporary>
   </component>
@@ -157,7 +159,14 @@
       <option name="project" value="LOCAL" />
       <updated>1569388892342</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="又写了两个模板">
+      <created>1569474509113</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1569474509113</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -176,7 +185,8 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="写了一个模板" />
-    <option name="LAST_COMMIT_MESSAGE" value="写了一个模板" />
+    <MESSAGE value="又写了两个模板" />
+    <option name="LAST_COMMIT_MESSAGE" value="又写了两个模板" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

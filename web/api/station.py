@@ -10,9 +10,11 @@ from db import table, Session, SessionBase
 from flask import request, url_for
 import json
 from db.decorators import withSession
+from web.util.decorators import renderTemplate
 
 
 @app.route('/api/station/<int:_id>')
+@renderTemplate('station.html')
 @withSession
 def station(session, _id):
     station: table.Station = session.query(table.Station).get(_id)
