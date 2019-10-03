@@ -14,7 +14,7 @@ from web.util.decorators import renderTemplate
 
 
 @app.route('/api/speciality/<int:_id>')
-@renderTemplate('speciality.html')  # todo:
+@renderTemplate('speciality.html')
 @withSession
 def speciality(session, _id):
     _speciality: table.Speciality = session.query(table.Speciality).get(_id)

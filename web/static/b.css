@@ -32,6 +32,7 @@
 	text-decoration:none;
 	
 }
+
 .list a
 {
 	color: white;
@@ -64,12 +65,14 @@ ul li:not(:last-child){border-right: 1px solid #ccc;}
 
 .item .title
 {
+	text-align: center;
 	font-size: 25px;
 	color: #fff;
 }
 
 .item .detail
 {
+	text-align: center;
 	color: #5eeeee
 }
 
@@ -94,6 +97,32 @@ table
 .button span
 {
 	font-size: 10px;
-	color: grey;
+	color: lightgrey;
 	vertical-align: bottom
+}
+
+.main-title{
+	text-align: center;
+}
+
+.page{
+	text-align: center;
+}
+
+.chosen_page{
+	text-decoration:underline;
+}
+
+.content{
+	margin-right: 200px;
+	margin-left: 200px;
+}
+
+.not_presence{
+
+}
+
+.main{
+	margin-left: 200px;
+	margin-right: 200px;
 }
