@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-	<title>专业：{{name}}</title>
+	<title>{{name}}</title>
 	<link href="/static/b.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 
@@ -19,40 +19,24 @@
 		</div>
 	</header>
 	<article>
-		<h1>
-			{{name}}
-		</h1>
-		频数{{frequency}}
+		<h1>{{name}}</h1>
+		<h2>频率：{{frequency}}</h2>
 		<hr/>
-		<h2>热度趋势</h2>
-		<p>未实现</p>
-		<hr/>
-		<h2>专业关键词</h2>
-		{% for item in keyword %}
-		<table border="0">
-		
-			<tr>
-				<td width="20%">
-					<a href="{{item.url}}">{{item.name}}</a>
-				</td>
-				<td>
-<!--					此处设计用来放一个长条。来让这个表格看起来像柱状图-->
-					{{item.weight}}
-				</td>
-			</tr>
-		</table>
-		{% endfor %}
 		<h2>相关专业</h2>
 		{%for item in speciality%}
-		<a class="button" href="{{item.url}}">{{item.name}}<span>&nbsp;频数{{item.frequency}}</span></a>
+		<a class="button" href="{{item.url}}">{{item.name}}<span>&nbsp;权重{{item.weight}}</span></a>
 		{%endfor%}
-		<hr/>
+		<h2>相关职位</h2>
+		{%for item in stations%}
+		<a class="button" href="{{item.url}}">{{item.name}}<span>&nbsp;权重{{item.weight}}</span></a>
+		{%endfor%}
 		<h2>相关页面</h2>
-		{% for item in page %}
+		{% for item in pages %}
 		<p>
 			<a href="{{item.url}}">{{item.co_name}}————{{item.name}}</a>
 		</p>
 		{% endfor %}
+		
 	</article>
 </body>
 </html>

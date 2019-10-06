@@ -21,7 +21,8 @@ def station(session, _id):
     out = {}
     out['name'] = station.station
     out['frequency'] = station.frequency
-    out['page'] = [{'co_name': i.json['公司名'], 'url': url_for('page', _id=i.id)} for i in station.pages_collection]
+    out['page'] = [{'name': i.json['职位'], 'co_name': i.json['公司名'], 'url': url_for('page', _id=i.id)}
+                   for i in station.pages_collection]
     foo = session.query(table.SpecialityHasStation). \
         filter(table.SpecialityHasStation.r_station == station). \
         order_by(table.SpecialityHasStation.frequency.desc()).all()

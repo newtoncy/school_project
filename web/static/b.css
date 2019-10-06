@@ -9,7 +9,7 @@
 	padding: 0;
 
 }
-.top ul li
+.top ul a
 {
 	font-size: 20px;
 	margin: 0;
@@ -18,11 +18,11 @@
 	color: #fff;line-height: 50px;text-align: center;
 /*	border-radius: 10px;*/
 }
-.top ul li:hover
+.top ul a:hover
 {
 	background-color: #cc0000
 }
-.top ul li:active
+.top ul a:active
 {
 	background-color: #880000
 }

@@ -10,9 +10,11 @@ from db import table, Session, SessionBase
 from flask import request, url_for
 import json
 from db.decorators import withSession
+from web.util.decorators import renderTemplate
 
 
 @app.route('/api/page/<int:_id>')
+@renderTemplate('page.html')
 @withSession
 def page(session: SessionBase, _id):
     page = session.query(table.Pages).get(_id)
@@ -26,4 +28,5 @@ def page(session: SessionBase, _id):
     keywordList = page.keyword_collection
     out['keywordList'] = [{'name': item.keyword, 'url': url_for('keyword', _id=item.id)}
                           for item in keywordList]
+    out['article'] = page.json['工作详情']
     return out

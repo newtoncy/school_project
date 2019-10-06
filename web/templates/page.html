@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+	<title>专业：{{name}}</title>
+	<link href="/static/b.css" rel="stylesheet" type="text/css" media="screen">
+</head>
+
+<body class="main">
+	<header>
+	<div class="top">
+			<ul>
+				<a  href="/api/speciality/"><li>专业</li></a>
+				<a href="/api/station/"><li>职位</li></a>
+				<a href="#contact"><li>热度趋势</li></a>
+				<a href="#about"><li>关于</li></a>
+			</ul>
+		</div>
+	</header>
+	<article>
+		<h1>
+			职位：<a href="{{station.url}}">{{station.name}}</a>
+		</h1>
+		
+		<h1>
+			专业：
+		</h1>
+		{% for item in speciality %}
+			<a href="{{item.url}}">{{item.name}}</a>			
+		{% endfor %}
+		<hr/>
+		<h1>
+			原文:
+		</h1>
+		{{article|safe}}
+		<br/>
+		
+	</article>
+</body>
+</html>

@@ -13,14 +13,14 @@ from db.decorators import withSession
 
 
 @app.route('/api/keyword/<int:_id>')
-@renderTemplate('??')  # todo:记得改
+@renderTemplate('keyword.html')
 @withSession
 def keyword(session, _id):
     _keyword = session.query(table.Keyword).get(_id)
     out = {}
     out['name'] = _keyword.keyword
     out['frequency'] = _keyword.frequency
-    out['pages'] = [{'name': page.r_station.station, 'url': url_for('page', _id=_id)}
+    out['pages'] = [{'name': page.r_station.station, 'co_name': page.json['公司名'], 'url': url_for('page', _id=_id)}
                     for page in _keyword.pages_collection]
     wordFrequency = session.query(table.WordFrequencyStation). \
         filter(table.WordFrequencyStation.r_keyword == _keyword). \
