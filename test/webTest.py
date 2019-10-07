@@ -1,2 +1,3 @@
 from web import *
-app.run()
+app.jinja_env.auto_reload = True
+app.run(debug=True)

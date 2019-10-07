@@ -28,7 +28,7 @@ from sqlalchemy.orm import sessionmaker,scoped_session
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm.session import Session as SessionBase
 
-engine = create_engine("mysql+pymysql://root:qq147258@10.1.1.112:3306/school_project?charset=utf8", encoding='utf-8')
+engine = create_engine("mysql+pymysql://root:qq147258@10.1.1.112:3306/school_project?charset=UTF8MB4", encoding='utf-8')
 sessionFactory = sessionmaker(bind=engine)
 Session = scoped_session(sessionFactory)
 metadata = MetaData()

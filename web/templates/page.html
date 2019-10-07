@@ -2,7 +2,8 @@
 <html>
 <head>
 <meta charset="utf-8">
-	<title>专业：{{name}}</title>
+	<title>{{name}}</title>
+	<script type="text/javascript" src="/static/onloadManager.js"></script>
 	<link href="/static/b.css" rel="stylesheet" type="text/css" media="screen">
 </head>
 
@@ -10,10 +11,10 @@
 	<header>
 	<div class="top">
 			<ul>
-				<a  href="/api/speciality/"><li>专业</li></a>
-				<a href="/api/station/"><li>职位</li></a>
-				<a href="#contact"><li>热度趋势</li></a>
-				<a href="#about"><li>关于</li></a>
+				<li><a  href="/api/speciality/">专业</a></li>
+				<li><a href="/api/station/">职位</a></li>
+				<li><a href="#contact">热度趋势</a></li>
+				<li><a href="#about">关于</a></li>
 			</ul>
 		</div>
 	</header>
@@ -26,7 +27,7 @@
 			专业：
 		</h1>
 		{% for item in speciality %}
-			<a href="{{item.url}}">{{item.name}}</a>			
+			<a href="{{item.url}}">{{item.name}}</a>
 		{% endfor %}
 		<hr/>
 		<h1>

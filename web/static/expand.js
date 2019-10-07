@@ -1,6 +1,7 @@
 //初始化每个可展开区域
 //运行工厂函数生成每个展开按钮的点击事件函数
-function init() {
+onloadRegister(expandInit);
+function expandInit() {
     let items = document.getElementsByClassName('etc');
     for (let i = 0; i < items.length; i++) {
         let item = items[i];
@@ -52,4 +53,3 @@ function expand(args) {
     }
 }
 
-window.onload = init;

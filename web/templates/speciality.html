@@ -4,17 +4,19 @@
 <meta charset="utf-8">
 	<title>专业：{{name}}</title>
 	<link href="/static/b.css" rel="stylesheet" type="text/css" media="screen">
+	<script type="text/javascript" src="/static/onloadManager.js"></script>
 	<script type="text/javascript" src="/static/expand.js"></script>
+	<script type="text/javascript" src="/static/resizeBar.js"></script>
 </head>
 
 <body class="main">
 	<header>
 	<div class="top">
 			<ul>
-				<a  href="/api/speciality/"><li>专业</li></a>
-				<a href="/api/station/"><li>职位</li></a>
-				<a href="#contact"><li>热度趋势</li></a>
-				<a href="#about"><li>关于</li></a>
+				<li><a  href="/api/speciality/">专业</a></li>
+				<li><a href="/api/station/">职位</a></li>
+				<li><a href="#contact">热度趋势</a></li>
+				<li><a href="#about">关于</a></li>
 			</ul>
 		</div>
 	</header>
@@ -31,13 +33,19 @@
 		<div class="cut">
 			<table border="0">
 				{% for item in keyword %}
-				<tr>
-					<td width="20%">
+				<tr class="bar_row">
+					<td width="10%">
 						<a href="{{item.url}}">{{item.name}}</a>
 					</td>
-					<td>
-	<!--					此处设计用来放一个长条。来让这个表格看起来像柱状图-->
+					<td class="weight" width="10%">
 						{{item.weight}}
+					</td>
+					<td class="bar_out">
+	<!--					此处设计用来放一个长条。来让这个表格看起来像柱状图-->
+						
+						<div class="bar"></div>
+						
+						
 					</td>
 				</tr>
 				{% endfor %}
