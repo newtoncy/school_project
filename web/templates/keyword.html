@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 	<title>{{name}}</title>
 	<link href="/static/b.css" rel="stylesheet" type="text/css" media="screen">
+	<script type="text/javascript" src="/static/expand.js"></script>
 </head>
 
 <body class="main">
@@ -23,19 +24,28 @@
 		<h2>频率：{{frequency}}</h2>
 		<hr/>
 		<h2>相关专业</h2>
-		{%for item in speciality%}
-		<a class="button" href="{{item.url}}">{{item.name}}<span>&nbsp;权重{{item.weight}}</span></a>
-		{%endfor%}
+		<div class="cut">
+			{%for item in speciality%}
+			<a class="button" href="{{item.url}}">{{item.name}}<span>&nbsp;权重{{item.weight}}</span></a>
+			{%endfor%}
+			<a href="javascript:void(0)" class="etc"><div>展开全部</div></a>
+		</div>
 		<h2>相关职位</h2>
-		{%for item in stations%}
-		<a class="button" href="{{item.url}}">{{item.name}}<span>&nbsp;权重{{item.weight}}</span></a>
-		{%endfor%}
+		<div class="cut">
+			{%for item in stations%}
+			<a class="button" href="{{item.url}}">{{item.name}}<span>&nbsp;权重{{item.weight}}</span></a>
+			{%endfor%}
+			<a href="javascript:void(0)" class="etc"><div>展开全部</div></a>
+		</div>
 		<h2>相关页面</h2>
-		{% for item in pages %}
-		<p>
-			<a href="{{item.url}}">{{item.co_name}}————{{item.name}}</a>
-		</p>
-		{% endfor %}
+		<div class="cut">
+			{% for item in pages %}
+			<p>
+				<a href="{{item.url}}">{{item.co_name}}————{{item.name}}</a>
+			</p>
+			{% endfor %}
+			<a href="javascript:void(0)" class="etc"><div>展开全部</div></a>
+		</div>
 		
 	</article>
 </body>

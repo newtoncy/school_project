@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 	<title>专业：{{name}}</title>
 	<link href="/static/b.css" rel="stylesheet" type="text/css" media="screen">
+	<script type="text/javascript" src="/static/expand.js"></script>
 </head>
 
 <body class="main">
@@ -27,31 +28,39 @@
 		<p>未实现</p>
 		<hr/>
 		<h2>专业关键词</h2>
-		{% for item in keyword %}
-		<table border="0">
-		
-			<tr>
-				<td width="20%">
-					<a href="{{item.url}}">{{item.name}}</a>
-				</td>
-				<td>
-<!--					此处设计用来放一个长条。来让这个表格看起来像柱状图-->
-					{{item.weight}}
-				</td>
-			</tr>
-		</table>
-		{% endfor %}
+		<div class="cut">
+			<table border="0">
+				{% for item in keyword %}
+				<tr>
+					<td width="20%">
+						<a href="{{item.url}}">{{item.name}}</a>
+					</td>
+					<td>
+	<!--					此处设计用来放一个长条。来让这个表格看起来像柱状图-->
+						{{item.weight}}
+					</td>
+				</tr>
+				{% endfor %}
+			</table>
+			<a href="javascript:void(0)" class="etc"><div>展开全部</div></a>
+		</div>
 		<h2>相关职位</h2>
-		{%for item in station%}
-		<a class="button" href="{{item.url}}">{{item.name}}<span>&nbsp;频数{{item.frequency}}</span></a>
-		{%endfor%}
+		<div class="cut">
+			{%for item in station%}
+			<a class="button" href="{{item.url}}">{{item.name}}<span>&nbsp;频数{{item.frequency}}</span></a>
+			{%endfor%}
+			<a href="javascript:void(0)" class="etc"><div>展开全部</div></a>
+		</div>
 		<hr/>
 		<h2>相关页面</h2>
-		{% for item in page %}
-		<p>
-			<a href="{{item.url}}">{{item.co_name}}————{{item.name}}</a>
-		</p>
-		{% endfor %}
+		<div class="cut">
+			{% for item in page %}
+			<p>
+				<a href="{{item.url}}">{{item.co_name}}————{{item.name}}</a>
+			</p>
+			{% endfor %}
+			<a href="javascript:void(0)" class="etc"><div>展开全部</div></a>
+		</div>
 	</article>
 </body>
 </html>

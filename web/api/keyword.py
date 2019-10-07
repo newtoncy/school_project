@@ -20,7 +20,7 @@ def keyword(session, _id):
     out = {}
     out['name'] = _keyword.keyword
     out['frequency'] = _keyword.frequency
-    out['pages'] = [{'name': page.r_station.station, 'co_name': page.json['公司名'], 'url': url_for('page', _id=_id)}
+    out['pages'] = [{'name': page.r_station.station, 'co_name': page.json['公司名'], 'url': url_for('page', _id=page.id)}
                     for page in _keyword.pages_collection]
     wordFrequency = session.query(table.WordFrequencyStation). \
         filter(table.WordFrequencyStation.r_keyword == _keyword). \
