@@ -1,3 +1,5 @@
+# 用于自动映射的一些命名规则
+import os
 import re
 
 
@@ -22,15 +24,25 @@ def name_for_collection_relationship(base, local_cls, referred_cls, constraint):
 
     return referred_cls.__name__[0].lower() + referred_cls.__name__[1:] + '_collection'
 
-
+# 自动映射数据库
 from sqlalchemy import create_engine, MetaData
-from sqlalchemy.orm import sessionmaker,scoped_session
+from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy.ext.automap import automap_base
 from sqlalchemy.orm.session import Session as SessionBase
+import json
 
-engine = create_engine("mysql+pymysql://root:qq147258@10.1.1.112:3306/school_project?charset=UTF8MB4", encoding='utf-8')
+# 读取配置文件，连接数据库
+this_dir, this_filename = os.path.split(__file__)
+config_path = os.path.join(this_dir, "ConnectDB.json")
+
+connectStr = "mysql+%(driver)s://%(username)s:%(password)s@%(host)s:%(port)s/%(dbname)s?charset=%(charset)s"
+with open(config_path,'rt',encoding='utf-8') as file:
+    connectStr = connectStr % json.load(file)
+engine = create_engine(connectStr, encoding='utf-8')
+# 设置会话的工厂函数。采用scoped_session
 sessionFactory = sessionmaker(bind=engine)
 Session = scoped_session(sessionFactory)
+# 自动映射数据库
 metadata = MetaData()
 Base = automap_base()
 Base.prepare(engine, reflect=True,
@@ -43,6 +55,7 @@ print(Base.classes.keys())
 
 # 将tableForIDE中的类替换成真正的类
 from db import tableForIDE as table
+
 for key in Base.classes.keys():
     _class = getattr(Base.classes, key)
     setattr(table, key, _class)

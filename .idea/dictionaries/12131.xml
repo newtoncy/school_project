@@ -2,6 +2,7 @@
   <dictionary name="12131">
     <words>
       <w>endfor</w>
+      <w>pymysql</w>
     </words>
   </dictionary>
 </component>
