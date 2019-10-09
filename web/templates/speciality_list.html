@@ -11,7 +11,7 @@
 		<h1 class="main-title">基于高校大数据的智能分析系统</h1>
 		<div class="top">
 			<ul>
-				<li><a  href="/api/speciality/">专业</a></li>
+				<li id="select"><a  href="/api/speciality/">专业</a></li>
 				<li><a href="/api/station/">职位</a></li>
 				<li><a href="#contact">热度趋势</a></li>
 				<li><a href="#about">关于</a></li>
@@ -48,8 +48,7 @@
 			{% else %}
 			<a class="button" style="background-color:gray"> 上一页 </a>
 			{% endif %}
-			<a class="chosen_page">1</a>
-			<a>2</a>
+			&nbsp;&nbsp;&nbsp;
 			{% if nextPage is defined%}
 			<a class="button" href="{{ nextPage }}"> 下一页 </a>
 			{% else %}

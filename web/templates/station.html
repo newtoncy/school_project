@@ -4,7 +4,10 @@
 <meta charset="utf-8">
 	<title>职位：{{name}}</title>
 	<link href="/static/b.css" rel="stylesheet" type="text/css" media="screen">
+	<script type="text/javascript" src="/static/global.js"></script>
 	<script type="text/javascript" src="/static/onloadManager.js"></script>
+	<script type="text/javascript" src="/static/hot_graph.js"></script>
+	<script type="text/javascript" src="/static/echarts.min.js"></script>
 	<script type="text/javascript" src="/static/expand.js"></script>
 	<script type="text/javascript" src="/static/resizeBar.js"></script>
 </head>
@@ -28,7 +31,8 @@
 		频数{{frequency}}
 		<hr/>
 		<h2>热度趋势</h2>
-		<p>未实现</p>
+<!--		这个div中放了一个热度图的后端api的url。js获取url，从后端获取数据-->
+		<div style="width: 100%" id="hot_graph">{{hot}}</div>
 		<hr/>
 		<h2>专业关键词</h2>
 		<div class="cut">

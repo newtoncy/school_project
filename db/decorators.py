@@ -11,11 +11,12 @@ def withSession(function):
     def wrapFunction(*args, **dicts):
         session: SessionBase = Session()
         try:
-            return function(session, *args, **dicts)
+            ret = function(session, *args, **dicts)
+            session.commit()
+            return ret
         except Exception as e:
             session.rollback()
             raise e
-        finally:
-            session.commit()
+
     wrapFunction.__name__ = function.__name__
     return wrapFunction

@@ -17,6 +17,7 @@ import web.api.station
 import web.api.specialityList
 import web.api.speciality
 import web.api.page
+import web.api.hot
 
 # 在上面注册视图
 

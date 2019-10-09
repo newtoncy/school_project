@@ -11,7 +11,7 @@ from flask import request, url_for
 import json
 from db.decorators import withSession
 from web.util.decorators import renderTemplate
-
+import urllib.parse
 
 @app.route('/api/speciality/<int:_id>')
 @renderTemplate('speciality.html')
@@ -35,5 +35,5 @@ def speciality(session, _id):
     out['keyword'] = [{'name': item.r_keyword.keyword, 'weight': item.weight,
                        'url': url_for('keyword', _id=item.r_keyword.id)}
                       for item in wordFrequencyList]
-    out['hot'] = None  # todo:计算热度
+    out['hot'] = url_for('hot') + '?' + urllib.parse.urlencode({'speciality': _id})  # 返回热度图接口的url
     return out

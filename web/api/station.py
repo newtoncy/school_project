@@ -4,6 +4,7 @@
 # @Date    : 2019-09-18
 # @Author  : 王超逸
 # @Brief   : 职位详情页
+import urllib.parse
 
 from web import app
 from db import table, Session, SessionBase
@@ -36,5 +37,5 @@ def station(session, _id):
     out['keyword'] = [{'name': item.r_keyword.keyword, 'weight': item.weight,
                        'url': url_for('keyword', _id=item.r_keyword.id)}
                       for item in wordFrequencyList]
-    out['hot'] = None  # todo:计算热度
+    out['hot'] = url_for('hot') + '?' + urllib.parse.urlencode({'station': _id})
     return out

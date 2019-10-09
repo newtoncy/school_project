@@ -12,20 +12,22 @@ from flask import request, url_for
 from db.decorators import withSession
 from web.util.decorators import renderTemplate
 
+ItemPerPage = 32
+
 
 @app.route('/api/speciality/')
 @renderTemplate("speciality_list.html")
 @withSession
 def specialityList(session):
     start = int(request.args.get('start', 0))
-    end = int(request.args.get('end', start + 30))
+    end = int(request.args.get('end', start + ItemPerPage))
     speciality = session.query(table.Speciality).order_by(table.Speciality.frequency.desc()).slice(start, end).all()
     out = {}
     out['speciality'] = [{'name': item.speciality, 'frequency': item.frequency,
                           'url': url_for('speciality', _id=item.id)}
                          for item in speciality]
     out['nextPage'] = url_for('specialityList') + '?start=%d' % end
-    foo = start - 30
+    foo = start - ItemPerPage
     if foo >= 0:
         out['prePage'] = url_for('specialityList') + '?start=%d' % foo
     return out
