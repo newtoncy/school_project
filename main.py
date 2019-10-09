@@ -1,12 +1,5 @@
-import json
-import unittest
-from WebInfoHandle import WebInfo, updateDB
+from web import *
 
-with open('job(0-400).json', encoding='utf-8') as file:
-    foo = json.load(file)
+# 这个应用不需要考虑并发，所以直接从这里运行即可
 
-
-webInfo = WebInfo().loadDict(foo['0'])
-updateDB.updateDB(webInfo)
-import jieba.analyse
-
+app.run(host='0.0.0.0', port=5000)

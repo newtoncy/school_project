@@ -18,7 +18,7 @@ class MyTestCase(unittest.TestCase):
         for i in range(100):
             webInfo = WebInfo().loadDict(foo[str(i)])
             self.assertTrue(webInfo.dateStr)
-
+    # 当初好像是用的这个写的数据库
     def test_updateDB(self):
         for item in foo.values():
             webInfo = WebInfo().loadDict(item)
