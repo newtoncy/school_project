@@ -3,7 +3,9 @@
 <head>
 <meta charset="utf-8">
 <title>职位目录</title>
-<link href="/static/b.css" rel="stylesheet" type="text/css" media="screen">
+	<link href="/static/b.css" rel="stylesheet" type="text/css" media="screen">
+	<link rel="shortcut icon" href="/static/favicon.ico" />
+	<link rel="bookmark"href="/static/favicon.ico" />
 </head>
 
 <body>
@@ -13,8 +15,8 @@
 			<ul>
 				<li><a  href="/api/speciality/">专业</a></li>
 				<li id="select"><a href="/api/station/">职位</a></li>
-				<li><a href="#contact">热度趋势</a></li>
-				<li><a href="#about">关于</a></li>
+				<li><a href="/api/search">热词</a></li>
+				<li><a href="/static/about.html" target="_blank">关于</a></li>
 			</ul>
 		</div>
 		<table class="list" border="0">
@@ -29,7 +31,7 @@
 								{{item.name}}
 							</div>
 							<div class="detail">
-								频率{{item.frequency}}
+								热度{{item.frequency}}
 							</div>
 						</div>
 					</a>

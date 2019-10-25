@@ -2,7 +2,13 @@
 <html>
 <head>
 <meta charset="utf-8">
-	<title>专业：{{name}}</title>
+	<title>专业:
+		{% if name != "__none__" %}
+			{{name}}
+		{% else %}
+			任何专业
+		{% endif %}
+	</title>
 	<link href="/static/b.css" rel="stylesheet" type="text/css" media="screen">
 	<script type="text/javascript" src="/static/global.js"></script>
 	<script type="text/javascript" src="/static/onloadManager.js"></script>
@@ -10,6 +16,8 @@
 	<script type="text/javascript" src="/static/echarts.min.js"></script>
 	<script type="text/javascript" src="/static/expand.js"></script>
 	<script type="text/javascript" src="/static/resizeBar.js"></script>
+	<link rel="shortcut icon" href="/static/favicon.ico" />
+	<link rel="bookmark"href="/static/favicon.ico" />
 </head>
 
 <body class="main">
@@ -18,22 +26,26 @@
 			<ul>
 				<li><a  href="/api/speciality/">专业</a></li>
 				<li><a href="/api/station/">职位</a></li>
-				<li><a href="#contact">热度趋势</a></li>
-				<li><a href="#about">关于</a></li>
+				<li><a href="/api/search">热词</a></li>
+				<li><a href="/static/about.html" target="_blank">关于</a></li>
 			</ul>
 		</div>
 	</header>
 	<article class="article">
 		<h1>
+		{% if name != "__none__" %}
 			{{name}}
+		{% else %}
+			任何专业
+		{% endif %}
 		</h1>
-		频数{{frequency}}
+		热度{{frequency}}
 		<hr/>
 		<h2>热度趋势</h2>
 		<!--		这个div中放了一个热度图的后端api的url。js获取url，从后端获取数据-->
 		<div style="width: 100%" id="hot_graph">{{hot}}</div>
 		<hr/>
-		<h2>专业关键词</h2>
+		<h2>专业热词</h2>
 		<div class="cut">
 			<table border="0">
 				{% for item in keyword %}
@@ -59,7 +71,7 @@
 		<h2>相关职位</h2>
 		<div class="cut">
 			{%for item in station%}
-			<a class="button" href="{{item.url}}">{{item.name}}<span>&nbsp;频数{{item.frequency}}</span></a>
+			<a class="button" href="{{item.url}}">{{item.name}}<span>&nbsp;热度{{item.frequency}}</span></a>
 			{%endfor%}
 			<a href="javascript:void(0)" class="etc"><div>展开全部</div></a>
 		</div>

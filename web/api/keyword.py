@@ -4,6 +4,7 @@
 # @Date    : 2019-09-18
 # @Author  : 王超逸
 # @Brief   : 关键字视图
+import urllib.parse
 
 from web import app
 from db import table, Session, SessionBase
@@ -36,5 +37,6 @@ def keyword(session, _id):
     out['speciality'] = [{'name': item.r_speciality.speciality, 'weight': item.weight,
                           'url': url_for('speciality', _id=item.speciality_id)}
                          for item in wordFrequency]
+    out['hot'] = url_for('hot') + '?' + urllib.parse.urlencode({'keyword': _id})  # 返回热度图接口的url
     return out
 

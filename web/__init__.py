@@ -6,7 +6,7 @@
 # @Brief   : flask配置
 
 
-from flask import Flask
+from flask import Flask, redirect, url_for
 
 app = Flask(__name__)
 
@@ -18,10 +18,11 @@ import web.api.specialityList
 import web.api.speciality
 import web.api.page
 import web.api.hot
+import web.api.search
 
 # 在上面注册视图
 
 
 @app.route('/')
 def hello_world():
-    return 'Hello World'
+    return redirect(url_for('specialityList'))

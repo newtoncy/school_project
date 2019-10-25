@@ -19,6 +19,7 @@ from web.util.decorators import renderTemplate
 def page(session: SessionBase, _id):
     page = session.query(table.Pages).get(_id)
     out = {}
+    out['name'] = page.r_station.station
     out['json'] = page.json
     station = page.r_station
     out['station'] = {'name': station.station, 'url': url_for('station', _id=station.id)}
@@ -28,5 +29,11 @@ def page(session: SessionBase, _id):
     keywordList = page.keyword_collection
     out['keywordList'] = [{'name': item.keyword, 'url': url_for('keyword', _id=item.id)}
                           for item in keywordList]
-    out['article'] = page.json['工作详情']
+    article: str = page.json['工作详情']
+    article = article.strip()
+    if article[0] == '[':
+        article = article[1:]
+    if article[-1] == ']':
+        article = article[:-1]
+    out['article'] = article
     return out

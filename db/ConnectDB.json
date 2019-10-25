@@ -2,7 +2,7 @@
   "username": "root",
   "password": "qq147258",
   "driver": "pymysql",
-  "host": "10.1.1.112",
+  "host": "127.0.0.1",
   "port": "3306",
   "dbname": "school_project",
   "charset": "UTF8MB4",
