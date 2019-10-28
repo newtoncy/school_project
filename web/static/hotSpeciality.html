@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>热门专业排行</title>
+    <link href="/static/b.css" rel="stylesheet" type="text/css" media="screen">
+	<link rel="shortcut icon" href="/static/favicon.ico" />
+	<link rel="bookmark" href="/static/favicon.ico" />
+	<script type="text/javascript" src="/static/echarts.min.js"></script>
+	<script src="jquery-3.4.1.js"></script>
+	<script src="hotSpecialityGraph.js"></script>
+</head>
+<body>
+    <div class="content">
+		<h1 class="main-title">基于高校大数据的智能分析系统</h1>
+		<div class="top">
+			<ul>
+				<li><a  href="/api/speciality/">专业</a></li>
+				<li><a href="/api/station/">职位</a></li>
+				<li><a href="/api/search">热词</a></li>
+				<li id="select"><a href="/static/hotSpeciality.html">热门专业排行</a></li>
+				<li><a href="/static/about.html" target="_blank">关于</a></li>
+			</ul>
+		</div>
+		<article>
+			<div style="width: 100%" id="hot_graph"></div>
+		</article>
+	</div>
+</body>
+</html>

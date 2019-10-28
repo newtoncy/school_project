@@ -17,7 +17,13 @@ from web.util.decorators import renderTemplate
 @withSession
 def search(session):
     out = {}
-    if 'keyword' not in request.args:
+    if 'keyword' not in request.args or not request.args['keyword']:
+        keywords = session.query(table.Keyword).order_by(table.Keyword.frequency.desc()).limit(50).all()
+        result = [{"name": keyword.keyword,
+                   'url': url_for('keyword', _id=keyword.id),
+                   'frequency': keyword.frequency}
+                  for keyword in keywords]
+        out['result'] = result
         return out
     name = request.args['keyword']
     keyword: table.Keyword = session.query(table.Keyword). \
@@ -27,7 +33,7 @@ def search(session):
     station: table.Station = session.query(table.Station). \
         filter(table.Station.station == name).first()
     result = []
-    if keyword:
+    if keyword and keyword.frequency != 0:
         result.append({"name": '关键词:' + name,
                        'url': url_for('keyword', _id=keyword.id),
                        'frequency': keyword.frequency})
