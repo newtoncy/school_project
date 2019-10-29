@@ -1,91 +1,127 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-	<title>专业:
-		{% if name != "__none__" %}
-			{{name}}
-		{% else %}
-			任何专业
-		{% endif %}
-	</title>
-	<link href="/static/b.css" rel="stylesheet" type="text/css" media="screen">
-	<script type="text/javascript" src="/static/global.js"></script>
-	<script type="text/javascript" src="/static/onloadManager.js"></script>
-	<script type="text/javascript" src="/static/hot_graph.js"></script>
-	<script type="text/javascript" src="/static/echarts.min.js"></script>
-	<script type="text/javascript" src="/static/expand.js"></script>
-	<script type="text/javascript" src="/static/resizeBar.js"></script>
-	<link rel="shortcut icon" href="/static/favicon.ico" />
-	<link rel="bookmark"href="/static/favicon.ico" />
+    <meta charset="utf-8">
+    <title>专业:
+        {% if name != "__none__" %}
+        {{name}}
+        {% else %}
+        任何专业
+        {% endif %}
+    </title>
+    <link href="/static/b.css" rel="stylesheet" type="text/css" media="screen">
+    <script type="text/javascript" src="/static/global.js"></script>
+    <script type="text/javascript" src="/static/onloadManager.js"></script>
+    <script type="text/javascript" src="/static/hot_graph.js"></script>
+    <script type="text/javascript" src="/static/echarts.min.js"></script>
+    <script type="text/javascript" src="/static/expand.js"></script>
+    <script type="text/javascript" src="/static/resizeBar.js"></script>
+	<script src="/static/jquery-3.4.1.js"></script>
+    <script src="/static/MyChart.js"></script>
+    <script src="/static/pieStation.js"></script>
+    <link rel="shortcut icon" href="/static/favicon.ico"/>
+    <link rel="bookmark" href="/static/favicon.ico"/>
+    <script>
+        $(_init);
+
+        function _init() {
+            $("#pie_button").click(function () {
+                $("#pie_chart").show();
+                pieSpeciality.myChart.resize();
+                $("#org_chart").hide();
+                $("#pie_button").hide();
+                $("#org_button").show();
+            });
+            $("#org_button").click(function () {
+                $("#pie_chart").hide();
+                $("#org_chart").show();
+                $("#pie_button").show();
+                $("#org_button").hide();
+            });
+            $("#pie_chart").hide();
+            $("#org_chart").show();
+            $("#org_button").hide();
+        }
+    </script>
 </head>
 
 <body class="main">
-	<header>
-	<div class="top">
-			<ul>
-				<li><a  href="/api/speciality/">专业</a></li>
-				<li><a href="/api/station/">职位</a></li>
-				<li><a href="/api/search">热词</a></li>
-				<li><a href="/static/hotSpeciality.html">热门专业top10</a></li>
-				<li><a href="/static/about.html" target="_blank">关于</a></li>
-			</ul>
-		</div>
-	</header>
-	<article class="article">
-		<h1>
-		{% if name != "__none__" %}
-			{{name}}
-		{% else %}
-			任何专业
-		{% endif %}
-		</h1>
-		热度{{frequency}}
-		<hr/>
-		<h2>热度趋势</h2>
-		<!--		这个div中放了一个热度图的后端api的url。js获取url，从后端获取数据-->
-		<div style="width: 100%" id="hot_graph">{{hot}}</div>
-		<hr/>
-		<h2>专业热词</h2>
-		<div class="cut">
-			<table border="0">
-				{% for item in keyword %}
-				<tr class="bar_row">
-					<td width="10%">
-						<a href="{{item.url}}">{{item.name}}</a>
-					</td>
-					<td class="weight" width="10%">
-						{{item.weight}}
-					</td>
-					<td class="bar_out">
-	<!--					此处设计用来放一个长条。来让这个表格看起来像柱状图-->
-						
-						<div class="bar"></div>
-						
-						
-					</td>
-				</tr>
-				{% endfor %}
-			</table>
-			<a href="javascript:void(0)" class="etc"><div>展开全部</div></a>
-		</div>
-		<h2>相关职位</h2>
-		<div class="cut">
-			{%for item in station%}
-			<a class="button" href="{{item.url}}">{{item.name}}<span>&nbsp;热度{{item.frequency}}</span></a>
-			{%endfor%}
-			<a href="javascript:void(0)" class="etc"><div>展开全部</div></a>
-		</div>
-		<hr/>
-		<h2>相关页面</h2>
-		<div class="cut">
-			{% for item in page %}
-			<p>
-				<a href="{{item.url}}">{{item.co_name}}————{{item.name}}</a>
-			</p>
-			{% endfor %}
-			<a href="javascript:void(0)" class="etc"><div>展开全部</div></a>
-		</div>
-	</article>
+<header>
+    <div class="top">
+        <ul>
+            <li><a href="/api/speciality/">专业</a></li>
+            <li><a href="/api/station/">职位</a></li>
+            <li><a href="/api/search">热词</a></li>
+            <li><a href="/static/hotSpeciality.html">热门专业排行</a></li>
+            <li><a href="/static/about.html" target="_blank">关于</a></li>
+        </ul>
+    </div>
+</header>
+<article class="article">
+    <h1>
+        {% if name != "__none__" %}
+        {{name}}
+        {% else %}
+        任何专业
+        {% endif %}
+    </h1>
+    热度{{frequency}}
+    <hr/>
+    <h2>热度趋势</h2>
+    <!--		这个div中放了一个热度图的后端api的url。js获取url，从后端获取数据-->
+    <div style="width: 100%" id="hot_graph">{{hot}}</div>
+    <hr/>
+    <h2>专业热词</h2>
+    <div class="cut">
+        <table border="0">
+            {% for item in keyword %}
+            <tr class="bar_row">
+                <td width="10%">
+                    <a href="{{item.url}}">{{item.name}}</a>
+                </td>
+                <td class="weight" width="10%">
+                    {{item.weight}}
+                </td>
+                <td class="bar_out">
+                    <!--					此处设计用来放一个长条。来让这个表格看起来像柱状图-->
+
+                    <div class="bar"></div>
+
+
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="javascript:void(0)" class="etc">
+            <div>展开全部</div>
+        </a>
+    </div>
+    <h2 style="
+    display: inline;
+    margin-right: 15px;">相关专业</h2>
+    <a id="pie_button" class="border_button" href="javascript:void(0)">显示饼图</a>
+    <a id="org_button" class="border_button" href="javascript:void(0)">显示为列表项</a>
+    <div id="org_chart" class="cut">
+        {%for item in station%}
+        <a class="button" href="{{item.url}}">{{item.name}}<span>&nbsp;热度{{item.frequency}}</span></a>
+        {%endfor%}
+        <a href="javascript:void(0)" class="etc">
+            <div>展开全部</div>
+        </a>
+    </div>
+	<div style="width: 100%" id="pie_chart"></div>
+    <hr/>
+    <h2>相关页面</h2>
+    <div class="cut">
+        {% for item in page %}
+        <p>
+            <a href="{{item.url}}">{{item.co_name}}————{{item.name}}</a>
+        </p>
+        {% endfor %}
+        <a href="javascript:void(0)" class="etc">
+            <div>展开全部</div>
+        </a>
+    </div>
+</article>
 </body>
 </html>

@@ -26,7 +26,7 @@ function expandInit() {
         if (pNode.clientHeight > limitHight) {
             pNode.style.height = "" + limitHight + "px";
             item.style.visibility = "visible";
-            item.innerHTML = "展开";
+            item.innerHTML = "<span class=\"border_button\">展开</span>";
         } else {
             item.style.visibility = "hidden";
             item.innerHTML = ""
@@ -43,12 +43,12 @@ function expand(args) {
     if (!args.isExpand) {
         //展开
         pNode.style.height = "" + (args.oriHeight + 50) + "px";
-        item.innerHTML = "收起";
+        item.innerHTML = "<span class=\"border_button\">收起</span>";
         args.isExpand = true;
     } else {
         //收起
         pNode.style.height = "" + limitHeight + "px";
-        item.innerHTML = "展开";
+        item.innerHTML = "<span class=\"border_button\">展开</span>";
         args.isExpand = false;
     }
 }
